@@ -20,7 +20,10 @@ const validateUrl = (url) => {
 
 const createUrlDoc = async (original_url) => model.createUrlDoc(original_url);
 
+const getOriginalUrlByShortcut = async (short_url) => model.getOriginalUrlByShortcut(short_url);
+
 module.exports = {
   validateUrl,
   createUrlDoc,
+  getOriginalUrlByShortcut,
 };

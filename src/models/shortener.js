@@ -20,6 +20,15 @@ const createUrlDoc = async (original_url) => {
   return newUrl;
 };
 
+const getOriginalUrlByShortcut = async (short_url) => {
+  Url
+    .findOne({ short_url })
+    .select(['original_url'])
+    .exec()
+    .then((url) => url);
+};
+
 module.exports = {
   createUrlDoc,
+  getOriginalUrlByShortcut,
 };
